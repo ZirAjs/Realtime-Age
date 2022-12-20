@@ -10,8 +10,33 @@
 
   <body>
     <div>
-      <p class="title">Realtime Age</p>
+      <p class="title">Your, Realtime Age</p>
     </div>
-    <div class="container"></div>
+    <div class="container">
+      <p class="age"></p>
+    </div>
   </body>
+  <script>
+    var age = <%=age%>;
+    var realtimeAge = age;
+    const Y = 365;
+    const H = Y*24;
+    const M = H*60;
+    const S = M*60;
+    const MS = S*1000;
+    (function(){
+      var now = new Date();
+      var start = new Date(now.getFullYear(), 0, 0);
+      var diff = (now - start) + ((start.getTimezoneOffset() - now.getTimezoneOffset()) * 60 * 1000);
+      var oneDay = 1000 * 60 * 60 * 24;
+      var day = Math.floor(diff / oneDay);
+      realtimeAge += day/Y + now.getHours()/H + now.getMinutes()/M + now.getSeconds()/S+ now.getMilliseconds()/MS;
+    })()
+
+
+    var intervalId = window.setInterval(function(){
+      realtimeAge+= 50/MS;
+      document.querySelector(".age").innerText = realtimeAge
+    }, 50);
+  </script>
 </html>
