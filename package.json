@@ -1,0 +1,19 @@
+{
+  "name": "realtime-age",
+  "version": "1.0.0",
+  "description": "shows realtime age",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZirAjs/Realtime-Age.git"
+  },
+  "author": "ZirAjs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ZirAjs/Realtime-Age/issues"
+  },
+  "homepage": "https://github.com/ZirAjs/Realtime-Age#readme"
+}
